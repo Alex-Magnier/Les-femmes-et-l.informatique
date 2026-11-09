@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les femmes et l'informatique</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div id="burger-menu">
+            <h2>Contact</h2>
+            <button id="burgerBtn"><img src="./assets/img/menu-burger-icon.svg" alt="burger-menu-icon" title="Icone Navigation" class="burger"></button>
+        </div>
+        <nav class="popupMenu" id="popupMenu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="archive.html">Archives</a></li>
+                <li><a href="contact.html" class="active">Contactez-nous</a></li>
+                <li><a href="mentions.html">Mentions légales</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-contact">
+        <div class="main-container">
+            <h1>Contactez-nous</h1>
+            <p>Vous avez des questions, des suggestions ou souhaitez partager vos idées ? N'hésitez pas à nous contacter !</p>
+        </div>
+        <div class="second-container-contact">
+            <form action="mailto:contact@lesfemmesetlinformatique.fr" method="POST">
+                <fieldset>
+                    <legend>Complétez ce formulaire pour nous contacter</legend>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom">
+
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required placeholder="Votre email">
+
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+
+                    <button type="submit">Envoyer</button>
+                </fieldset>
+            </form>
+    </main>
+    <footer>
+        <p>Les femmes et l'informatique</p>
+        <ul>
+            <li><a href="source.html">Sources</a></li>
+            <li><a href="contact.html">Contactez-nous</a></li>
+            <li><a href="mentions.html">Mentions légales</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

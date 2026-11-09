@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Backgrounds */
+    --mainBackground: #F7F5F0;
+    --cardBackground: #E9E4DB;
+    --formBackground: #ffffff;
+    
+    /* Text */
+    --titleAndtext : #242321;
+    --secondaryText : #77736F;
+
+    /* Buttons */
+    --buttonBackground: #713E48;
+
+    /* Separator */
+    --separator: #D8D2C9;
+
+    /* Typographie */
+    --font-primary: "Inter", serif;
+}
+
+body {
+    background-color: var(--mainBackground);
+}
+
+/* Header */
+header {
+    position: sticky; /*Permets de garder le header en haut de la page quand on scroll*/
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    background-color: var(--mainBackground);
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    width: 10%;
+}
+
+header button img {
+    display: block;
+    width: 100%;
+}
+
+/* Section avec accueil et l'icone du menu burger */
+#burger-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--buttonBackground); /* Couleur du texte du header */
+    padding: 5% 8%;
+    background-color: var(--mainBackground);
+    position: relative;
+    z-index: 1001; /* Permet de garder le header au-dessus du menu popup */
+    border-bottom: 1px solid var(--separator);
+}
+
+/* Menu popup qui s'affiche au clic sur le bouton BurgerMenu grâce au JavaScript */
+.popupMenu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--mainBackground);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-in-out;
+}
+
+.popupMenu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popupMenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.popupMenu li a {
+    font-size: 1.5em;
+    color: var(--titleAndtext);
+    text-decoration: none;
+}
+
+.popupMenu li a.active {
+    color: var(--buttonBackground);
+}
+
+main {
+    padding: 5% 8%;
+    flex: 1;
+}
+
+.main-container-index {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1em;
+}
+
+
+.main-container-index h1 {
+    font-family: var(--font-primary);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--titleAndtext);
+}
+
+.main-container-index p {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--secondaryText);
+}
+
+.main-container-index a {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--formBackground);
+    text-decoration: none;
+    background-color: var(--buttonBackground);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.main-container-index img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-container-index figure {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 0.5em;
+}
+
+.main-container-index figcaption {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondaryText);
+}
+
+.main-container-index hr {
+    color: var(--separator);
+    margin: 20px 0;
+}
+
+footer {
+    background-color: var(--mainBackground);
+    padding: 20px 8%;
+    border-top: 1px solid var(--separator);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+footer p {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--buttonBackground);
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li a {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--titleAndtext);
+    text-decoration: none;
+}
+
+#main-archive {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 4em;
+}
+
+.second-container-archive {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 3em;
+}
+
+.archive-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cardBackground);
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden; /* Permet de cacher les parties de l'image qui dépassent de la card */
+}
+
+.archive-card > a {
+    width: 100%;
+}
+
+.archive-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.archive-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+.archive-card-content h2 {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--titleAndtext);
+}
+
+.archive-card-content p {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--buttonBackground);
+}
+
+.archive-card-content a {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--formBackground);
+    text-decoration: none;
+    background-color: var(--buttonBackground);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+#main-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 4em;
+}
+
+.second-container-contact fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.second-container-contact label {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--titleAndtext);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.second-container-contact input, .second-container-contact textarea {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--titleAndtext);
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--separator);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.second-container-contact button[type="submit"] {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--formBackground);
+    text-decoration: none;
+    background-color: var(--buttonBackground);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content;
+    border: none;
+}
+
+#main-source {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 4em;
+}
+
+.main-container-source {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1em;
+}
+
+.main-container-source h1 {
+    font-family: var(--font-primary);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--titleAndtext);
+}
+
+.main-container-source p {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--secondaryText);
+}
+
+.main-container-source ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-container-source ul li {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--titleAndtext);
+    margin-bottom: 10px;
+}
+
+.main-container-source ul li a {
+    color: var(--buttonBackground);
+    text-decoration: none;
+}
+
+#main-mentions {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 4em;
+}
+
+.main-container-mentions {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1em;
+}
+
+.main-container-mentions h1 {
+    font-family: var(--font-primary);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--titleAndtext);
+}
+
+.main-container-mentions p {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--secondaryText);
+}
+
+.main-container-mentions a {
+    color: var(--buttonBackground);
+    text-decoration: none;
+}
+
+#main-bio {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 4em;
+}
+
+.main-container-bio {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1em;
+}
+
+.main-container-bio h1 {
+    font-family: var(--font-primary);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--titleAndtext);
+}
+
+.main-container-bio p {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--secondaryText);
+}
+
+.main-container-bio a {
+    color: var(--buttonBackground);
+    text-decoration: none;
+}
+
+#back-button {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--formBackground);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--buttonBackground);
+    width: fit-content;
+}
