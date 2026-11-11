@@ -46,7 +46,7 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 p {
@@ -493,6 +493,10 @@ footer ul li a {
 
 @media screen and (min-width: 768px) {
     /* Typographie desktop */
+    h1 {
+        font-size: 72px;
+    }
+    
     h2 {
         font-size: 42px;
     }
